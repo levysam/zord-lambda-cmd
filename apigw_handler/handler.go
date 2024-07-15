@@ -28,7 +28,7 @@ func (h *APIGWHandler) Handler(req events.APIGatewayV2HTTPRequest) (*events.APIG
 	h.server.ServeHTTP(writer, requestHttp)
 	return &events.APIGatewayV2HTTPResponse{
 		StatusCode:      writer.Status,
-		Headers:         req.Headers,
+		Headers:         nil,
 		Body:            string(writer.Body),
 		IsBase64Encoded: false,
 		Cookies:         req.Cookies,
